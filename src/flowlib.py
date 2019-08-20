@@ -7,7 +7,6 @@
 # Date: 6th Aug 2016
 # ==============================
 """
-from __future__ import print_function
 import png
 import numpy as np
 import matplotlib.colors as cl
