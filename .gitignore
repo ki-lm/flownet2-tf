@@ -8,3 +8,4 @@ checkpoints/
 !checkpoints/download.sh
 !checkpoints/README.md
 checkpoints.zip
+.idea/
