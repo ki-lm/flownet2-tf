@@ -9,3 +9,4 @@ checkpoints/
 !checkpoints/README.md
 checkpoints.zip
 .idea/
+.DS_Store
