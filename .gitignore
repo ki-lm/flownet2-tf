@@ -10,3 +10,4 @@ checkpoints/
 checkpoints.zip
 .idea/
 .DS_Store
+.remote-sync.json
