@@ -6,7 +6,6 @@ attrs==19.1.0
 Babel==2.7.0
 backcall==0.1.0
 better-apidoc==0.1.2
-blueoil==0.10.0
 certifi==2019.6.16
 chardet==3.0.4
 click==6.7
@@ -16,8 +15,6 @@ Cython==0.29.13
 DataProperty==0.43.1
 decorator==4.4.0
 dill==0.3.0
-dlk==0.5.0
-docutils==0.15.1
 dominate==2.3.5
 easydict==1.6
 filelock==3.0.12
@@ -43,7 +40,6 @@ Keras-Applications==1.0.8
 Keras-Preprocessing==1.1.0
 kiwisolver==1.1.0
 livereload==2.6.1
-Logbook==1.4.3
 Markdown==3.1.1
 MarkupSafe==1.1.1
 matplotlib==2.2.2
