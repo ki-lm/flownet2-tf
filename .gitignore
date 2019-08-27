@@ -8,3 +8,6 @@ checkpoints/
 !checkpoints/download.sh
 !checkpoints/README.md
 checkpoints.zip
+.idea/
+.DS_Store
+.remote-sync.json

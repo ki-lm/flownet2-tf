@@ -18,7 +18,7 @@ def open_flo_file(filename):
     with open(filename, 'rb') as f:
         magic = np.fromfile(f, np.float32, count=1)
         if 202021.25 != magic:
-            print 'Magic number incorrect. Invalid .flo file'
+            print('Magic number incorrect. Invalid .flo file')
         else:
             w = np.fromfile(f, np.int32, count=1)
             h = np.fromfile(f, np.int32, count=1)
