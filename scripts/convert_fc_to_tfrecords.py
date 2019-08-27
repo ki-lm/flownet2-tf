@@ -3,7 +3,7 @@ import os
 import sys
 import numpy as np
 from progressbar import ProgressBar, Percentage, Bar
-from scipy.misc import imread
+from imageio import imread
 import tensorflow as tf
 
 FLAGS = None
@@ -14,17 +14,18 @@ VAL = 2
 
 
 # https://stackoverflow.com/questions/28013200/reading-middlebury-flow-files-with-python-bytes-array-numpy
+# https://stackoverflow.com/questions/42483476/numpy-only-integer-scalar-arrays-can-be-converted-to-a-scalar-index-upgrading
 def open_flo_file(filename):
     with open(filename, 'rb') as f:
         magic = np.fromfile(f, np.float32, count=1)
         if 202021.25 != magic:
             print('Magic number incorrect. Invalid .flo file')
         else:
-            w = np.fromfile(f, np.int32, count=1)
-            h = np.fromfile(f, np.int32, count=1)
+            w = np.fromfile(f, np.int32, count=1)[0]
+            h = np.fromfile(f, np.int32, count=1)[0]
             data = np.fromfile(f, np.float32, count=2*w*h)
             # Reshape data into 3D array (columns, rows, bands)
-            return np.resize(data, (w[0], h[0], 2))
+            return np.resize(data, (w, h, 2))
 
 
 # https://github.com/tensorflow/tensorflow/blob/r1.1/tensorflow/examples/how_tos/reading_data/convert_to_records.py

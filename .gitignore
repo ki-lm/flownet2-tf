@@ -11,3 +11,5 @@ checkpoints.zip
 .idea/
 .DS_Store
 .remote-sync.json
+data/tfrecords
+!data/tfrecords/fc_sample.tfrecords
