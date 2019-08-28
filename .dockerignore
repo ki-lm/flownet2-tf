@@ -1,0 +1,10 @@
+# git
+.git/
+
+# python
+*.pyc
+__pycache__/
+
+# project
+*tmp/
+data/
