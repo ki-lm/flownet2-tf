@@ -7,11 +7,12 @@ from .flownet_sd import FlowNetSD
 net = FlowNetSD()
 
 # Load a batch of data
-input_a, input_b, flow = load_batch(FLYING_CHAIRS_DATASET_CONFIG, 'sample', net.global_step)
+input_a, input_b, flow = load_batch(
+    FLYING_CHAIRS_DATASET_CONFIG, 'train', net.global_step)
 
 # Train on the data
 net.train(
-    log_dir='./logs/flownet_sd_sample',
+    log_dir='./logs/flownet_sd',
     training_schedule=LONG_SCHEDULE,
     input_a=input_a,
     input_b=input_b,

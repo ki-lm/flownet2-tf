@@ -1,6 +1,6 @@
 FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu16.04
 
-MAINTAINER masuda@leapmind.io
+MAINTAINER inoue@leapmind.io
 
 # TensorBoard
 EXPOSE 6006
@@ -100,7 +100,7 @@ RUN apt-get update && apt-get install -y g++-5-arm-linux-gnueabihf && \
 COPY requirements.txt /tmp/
 RUN pip install -r /tmp/requirements.txt && rm -rf /tmp/requirements.txt
 RUN pip uninstall -y prompt-toolkit
-RUN pip install pypng imageio
+RUN pip install pypng imageio progressbar
 
 # For development
 RUN apt-get update && apt-get install -y \

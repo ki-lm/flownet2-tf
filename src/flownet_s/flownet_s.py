@@ -106,10 +106,11 @@ class FlowNetS(Net):
 
                     flow = predict_flow2 * 20.0
                     # TODO: Look at Accum (train) or Resample (deploy) to see if we need to do something different
-                    flow = tf.image.resize_bilinear(flow,
-                                                    tf.stack([height, width]),
-                                                    align_corners=True)
-
+                    # tf.image.resize_bilinear
+                    flow = tf.compat.v1.image.resize_bilinear(
+                        # flow, tf.stack([height, width]),
+                        flow, (height, width),
+                        align_corners=True, name="output")
                     return {
                         'predict_flow6': predict_flow6,
                         'predict_flow5': predict_flow5,
@@ -118,6 +119,18 @@ class FlowNetS(Net):
                         'predict_flow2': predict_flow2,
                         'flow': flow,
                     }
+
+    def placeholders(self):
+        images_placeholder = tf.placeholder(
+            tf.float32,
+            shape=(1, 384, 512, 6),
+            name="images_placeholder")
+
+        labels_placeholder = tf.placeholder(
+            tf.float32,
+            shape=(1, 384, 512, 2),
+            name="labels_placeholder")
+        return images_placeholder, labels_placeholder
 
     def loss(self, flow, predictions):
         flow = flow * 0.05

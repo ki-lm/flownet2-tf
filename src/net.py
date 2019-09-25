@@ -2,7 +2,8 @@ import abc
 from enum import Enum
 import os
 import tensorflow as tf
-from .flowlib import flow_to_image, write_flow
+# from .flowlib import flow_to_image, write_flow
+from .flow_to_image import flow_to_image
 import numpy as np
 from imageio import imread, imsave
 import uuid

@@ -7,7 +7,8 @@ from .flownet_css import FlowNetCSS
 net = FlowNetCSS()
 
 # Load a batch of data
-input_a, input_b, flow = load_batch(FLYING_CHAIRS_DATASET_CONFIG, 'sample', net.global_step)
+input_a, input_b, flow = load_batch(
+    FLYING_CHAIRS_DATASET_CONFIG, 'train', net.global_step)
 
 # Train on the data
 net.train(
@@ -18,5 +19,7 @@ net.train(
     flow=flow,
     # Load trained weights for CS part of network
     checkpoints={
-        './checkpoints/FlowNetCS/flownet-CS.ckpt-0': ('FlowNetCSS/FlowNetCS', 'FlowNetCSS')}
+        './checkpoints/FlowNetCS/flownet-CS.ckpt-0':
+            ('FlowNetCSS/FlowNetCS', 'FlowNetCSS')
+    }
 )

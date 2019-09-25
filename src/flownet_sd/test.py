@@ -12,7 +12,8 @@ def main():
 
     # Train on the data
     net.test(
-        checkpoint='./checkpoints/FlowNetSD/flownet-SD.ckpt-0',
+        # checkpoint='./checkpoints/FlowNetSD/flownet-SD.ckpt-0',
+        checkpoint='./logs/flownet_sd/model.ckpt-394356',
         input_a_path=FLAGS.input_a,
         input_b_path=FLAGS.input_b,
         out_path=FLAGS.out,
